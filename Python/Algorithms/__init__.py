@@ -5,4 +5,4 @@ date: 2017/7/25
 
 
 """
-from bubbleSort import BubbleSortV1
+from bubbleSort import BubbleSortV1, BubbleSortV2
