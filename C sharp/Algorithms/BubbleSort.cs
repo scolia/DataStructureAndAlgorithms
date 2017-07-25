@@ -120,10 +120,10 @@ namespace Algorithms
                 public static void Sort(IList<T> array, int length)
                 {
                     int count = 0;  // 已经冒泡的个数
-                    bool ischange = false;
+                    bool isChange = false;
                     while (true)
                     {
-                        ischange = false;
+                        isChange = false;
                         for (int i = 0; i < length - 1 - count; i++)
                         {
                             if(array[i].CompareTo(array[i + 1]) > 0)
@@ -131,11 +131,11 @@ namespace Algorithms
                                 var temp = array[i];
                                 array[i] = array[i + 1];
                                 array[i + 1] = temp;
-                                ischange = true;
+                                isChange = true;
                             }
                         }
                         count++;
-                        if(!ischange)
+                        if(!isChange)
                         {
                             break;
                         }
@@ -149,10 +149,10 @@ namespace Algorithms
                 public static void SortDesc(IList<T> array, int length)
                 {
                     int count = 0;  // 已经冒泡的个数
-                    bool ischange = false;
+                    bool isChange = false;
                     while (true)
                     {
-                        ischange = false;
+                        isChange = false;
                         for (int i = 0; i < length - 1 - count; i++)
                         {
                             if (array[i].CompareTo(array[i + 1]) < 0)
@@ -160,11 +160,11 @@ namespace Algorithms
                                 var temp = array[i];
                                 array[i] = array[i + 1];
                                 array[i + 1] = temp;
-                                ischange = true;
+                                isChange = true;
                             }
                         }
                         count++;
-                        if (!ischange)
+                        if (!isChange)
                         {
                             break;
                         }
