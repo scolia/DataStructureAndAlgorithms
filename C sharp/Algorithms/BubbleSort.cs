@@ -105,6 +105,74 @@ namespace Algorithms
                 }
             } // end class
 
+            /// <summary>
+            /// 冒泡排序的另一种实现思路, 当没有发生交换时, 说明是有序的, 即终止排序, 最好能达到o(n), 一般为O(n^2)
+            /// </summary>
+            /// <typeparam name="T"></typeparam>
+            public class BubbleSortV3<T>
+            where T: IComparable
+            {
+                /// <summary>
+                /// 升序
+                /// </summary>
+                /// <param name="array"></param>
+                /// <param name="length"></param>
+                public static void Sort(IList<T> array, int length)
+                {
+                    int count = 0;  // 已经冒泡的个数
+                    bool ischange = false;
+                    while (true)
+                    {
+                        ischange = false;
+                        for (int i = 0; i < length - 1 - count; i++)
+                        {
+                            if(array[i].CompareTo(array[i + 1]) > 0)
+                            {
+                                var temp = array[i];
+                                array[i] = array[i + 1];
+                                array[i + 1] = temp;
+                                ischange = true;
+                            }
+                        }
+                        count++;
+                        if(!ischange)
+                        {
+                            break;
+                        }
+                    }
+                }
+                /// <summary>
+                /// 降序
+                /// </summary>
+                /// <param name="array"></param>
+                /// <param name="length"></param>
+                public static void SortDesc(IList<T> array, int length)
+                {
+                    int count = 0;  // 已经冒泡的个数
+                    bool ischange = false;
+                    while (true)
+                    {
+                        ischange = false;
+                        for (int i = 0; i < length - 1 - count; i++)
+                        {
+                            if (array[i].CompareTo(array[i + 1]) < 0)
+                            {
+                                var temp = array[i];
+                                array[i] = array[i + 1];
+                                array[i + 1] = temp;
+                                ischange = true;
+                            }
+                        }
+                        count++;
+                        if (!ischange)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+            }// end class
+
         }
     }
 
