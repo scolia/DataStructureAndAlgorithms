@@ -119,25 +119,19 @@ namespace Algorithms
                 /// <param name="length"></param>
                 public static void Sort(IList<T> array, int length)
                 {
-                    int count = 0;  // 已经冒泡的个数
-                    bool isChange = false;
-                    while (true)
+                    bool isChange = true;
+                    for (int i = 1; i < length && isChange; i++)
                     {
                         isChange = false;
-                        for (int i = 0; i < length - 1 - count; i++)
+                        for(int j = 0; j < length - i; j++)
                         {
-                            if(array[i].CompareTo(array[i + 1]) > 0)
+                            if(array[j].CompareTo(array[j + 1]) > 0)
                             {
-                                var temp = array[i];
-                                array[i] = array[i + 1];
-                                array[i + 1] = temp;
+                                var temp = array[j];
+                                array[j] = array[j + 1];
+                                array[j + 1] = temp;
                                 isChange = true;
                             }
-                        }
-                        count++;
-                        if(!isChange)
-                        {
-                            break;
                         }
                     }
                 }
